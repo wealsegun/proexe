@@ -1,6 +1,7 @@
-import { createStore } from 'redux';
-import tasqReducer from './../reducers/task-reducer';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import taskReducer from "./../reducers/task-reducer";
 
-const tasqStore = createStore(tasqReducer);
+const taskStore = createStore(taskReducer, applyMiddleware(thunk));
 
-export default tasqStore;
+export default taskStore;
