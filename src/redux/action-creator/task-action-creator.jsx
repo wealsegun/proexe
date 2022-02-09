@@ -1,9 +1,10 @@
 import * as actionTypes from "../actions/actionTypes";
 
-export const getAllTask = () => (dispatch) => {
+export const getAllTask = () => async(dispatch) => {
   dispatch({ type: actionTypes.GET_TASK_LIST_LOADING });
   try {
     //   api
+    const response = await
     if (data.status) {
       dispatch({ type: actionTypes.GET_TASK_LIST_SUCCESS, payload: data });
     }
