@@ -25,13 +25,11 @@ export const getTask = (data) => {
     return {
       type: actionTypes.SET_TASK_CREATION_STATE,
       payload: {
-        dateCreated: data.DateCreated,
-        id: data.Id,
-        name: data.Name,
-        channelLink: data.ChannelLink,
-        isDeleted: data.IsDeleted,
-        userId: data.UserId,
-        firmId: data.FirmId,
+        Id: data.Id,
+        Name: data.Name,
+        Username: data.Username,
+        City: data.City,
+        Email: data.Email
       },
     };
   };

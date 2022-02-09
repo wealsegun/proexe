@@ -1,26 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import 'semantic-ui-css/semantic.min.css'
-
+import React from "react";
+import { Link } from "react-router-dom";
+// import 'semantic-ui-css/semantic.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+// import 'semantic-ui-css/semantic.css';
+import "./App.css";
+import DashboardNav from './modules/dashboard/dashboard';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <a href="/tutorials" className="navbar-brand">
+          ProExe
         </a>
-      </header>
+        <div className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to={"/tutorials"} className="nav-link">
+              Tutorials
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/add"} className="nav-link">
+              Add
+            </Link>
+          </li>
+        </div>
+      </nav>
+      <div className="container mt-3">
+        <h1>Dashboard</h1>
+      <DashboardNav/>
+      </div>
     </div>
   );
 }
-
 export default App;
