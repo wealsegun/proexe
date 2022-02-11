@@ -2,16 +2,20 @@
 import * as actionTypes from "../actions/actionTypes";
 import TaskDataService from "../../services/task.service";
 
-export const getAllUsers = () => async (dispatch) => {
+export const getAllUsers = () => {
+  console.log('method called')
+  return async (dispatch) => {
+    console.log('action dispatched')
   dispatch({ type: actionTypes.GET_USERS_LOADING });
   try {
     const res = await TaskDataService.getAll();
+    console.log(res)
     dispatch({ type: actionTypes.GET_USERS_SUCCESS, payload: res.data });
   } catch (err) {
     console.log(err);
     dispatch({ type: actionTypes.GET_USERS_ERROR });
   }
-};
+}};
 
 export const createNewUser = (data) => async (dispatch) => {
   try {

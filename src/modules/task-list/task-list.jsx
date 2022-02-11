@@ -1,11 +1,18 @@
 import "./task-list.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalComp from "../modal";
+import { connect } from "react-redux";
+import {getAllUsers } from "../../redux/action-creator"
 
 function TaskListNav({ ...props }) {
   console.log(props);
 
-  const [show, setShow] = useState({ open: false, id: undefined })
+  const [show, setShow] = useState({ open: false, id: undefined });
+
+  useEffect(() => {
+    props.getAllUsers()
+  }, [props.getAllUsers]);
+  
 
   return (
     <div className="task-list" >
@@ -24,7 +31,7 @@ function TaskListNav({ ...props }) {
         </thead>
         <tbody>
           {
-          TaskListNav?.data?.map((item, i) => {
+          props.data?.tasks.map((item, i) => {
             return (
               <tr key={i} >
                 <td>{item?.id}</td>
@@ -50,4 +57,16 @@ function TaskListNav({ ...props }) {
     </div>
   );
 }
-export default TaskListNav;
+
+const mapStateToProps = (state) => {
+ return{
+    users: state.users
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getAllUsers: () => dispatch(getAllUsers())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(TaskListNav);
