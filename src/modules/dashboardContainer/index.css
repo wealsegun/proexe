@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 32px 16px;
+    border-bottom: solid 1px rgb(209, 209, 209);
 }
 
 button {
@@ -22,12 +23,6 @@ button {
 .dashboard {
     font-weight: 600;
     margin-top: 50px;
-}
-
-.task-list {
-    border-top:solid 1px rgb(209, 209, 209);
-    padding: 12px ;
-    overflow-x: auto;
 }
 
 .list-container{

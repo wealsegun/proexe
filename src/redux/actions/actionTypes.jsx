@@ -1,15 +1,15 @@
-export const GET_TASK_LIST_ERROR = "get_task_list_error";
-export const GET_TASK_LIST_LOADING = "get_task_list_laoding";
-export const GET_TASK_LIST_SUCCESS = "get_task_list_success";
+export const GET_USERS_ERROR = "get_users_error";
+export const GET_USERS_LOADING = "get_users_loading";
+export const GET_USERS_SUCCESS = "get_users_success";
 
-export const TASK_CREATION_ERROR ="task_creation_error";
-export const TASK_CREATION_LOADING ="task_creation_loading";
-export const TASK_CREATION_SUCCESS ="task_creation_success";
+export const CREATE_USER_ERROR ="create_user_error";
+export const CREATE_USER_LOADING ="create_user_loading";
+export const CREATE_USER_SUCCESS ="create_user_success";
 
-export const DELETE_TASK_ERROR  = "delete_task_error";
-export const DELETE_TASK_LOADING  = "delete_task_loading";
-export const DELETE_TASK_SUCCESS  = "delete_task_success";
+export const DELETE_USER_ERROR  = "delete_user_error";
+export const DELETE_USER_LOADING  = "delete_user_loading";
+export const DELETE_USER_SUCCESS  = "delete_user_success";
 
-export const UPDATE_TASK_ERROR = "update_task_error";
-export const UPDATE_TASK_LOADING = "update_task_loading";
-export const UPDATE_TASK_SUCCESS = "update_task_success";
+export const UPDATE_USER_ERROR = "update_user_error";
+export const UPDATE_USER_LOADING = "update_user_loading";
+export const UPDATE_USER_SUCCESS = "update_user_success";

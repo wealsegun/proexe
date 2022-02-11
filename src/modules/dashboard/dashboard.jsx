@@ -1,30 +1,28 @@
 import TaskListNav from "../task-list/task-list";
-import { Link, Route, useNavigate } from "react-router-dom";
-import CreateTask from '../create-task/create-task';
-// import "bootstrap/dist/css/bootstrap.min.css";
-import "./header.css"
-function DashboardNav() {
-    let navigate = useNavigate()
-  return (
-    <div>
-      <h1 className="dashboard">Dashbaord</h1>
-      <div className="list-container" >
-        <div className="align-center">
-          <h3>User List</h3>
-         <button onClick={()=>{navigate('/create-task')}} className="add-new">Add new</button>
-             {/* <Switch>
-                 <Route>
-                 <CreateTask/>                 
-                 </Route>
-             </Switch> */}
-        </div>
+import { data } from '../../data';
+import DashboardContainer from "../dashboardContainer";
+import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { getAllUsers } from '../../redux/action-creator'
 
-        <div className="task-list">
-          <TaskListNav />
-        </div>
-      </div>
-    </div>
+function DashboardNav(props) {
+
+  useEffect(() => {
+    getAllUsers()
+  }, [])
+
+  return (
+    <DashboardContainer buttonLink='create-task' button='Add new' title='User List' >
+      <TaskListNav data={props.users} />
+    </DashboardContainer>
   );
 }
 
-export default DashboardNav;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    users: state
+  }
+}
+
+export default connect(mapStateToProps, { getAllUsers })(DashboardNav);

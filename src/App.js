@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import DashboardNav from "./modules/dashboard/dashboard";
 import CreateTask from "./modules/create-task/create-task";
+import { connect } from 'react-redux'
+
 function App() {
   return (
     <div>
@@ -17,11 +19,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <div className="container mt-3">
-                <DashboardNav />
-              </div>
-            }
+            element={<DashboardNav />}
           />
           <Route path="/create-task" element={<CreateTask />} />
         </Routes>
@@ -29,4 +27,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default connect()(App);
