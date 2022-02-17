@@ -1,5 +1,7 @@
 import React from 'react'
 import { Modal, Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import {taskDeleted} from '../../redux/action-creator';
 
 function ModalComp({ children, ...props }) {
 
@@ -21,11 +23,11 @@ function ModalComp({ children, ...props }) {
                     <Button variant="secondary" onClick={() => props.handleShow(false)} >
                         Cancel
                     </Button>
-                    <Button variant="danger">Delete</Button>
+                    <Button variant="danger" onClick={() => {console.log(props.id); props.deleteTask(props?.id)}}>Delete</Button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 }
 
-export default ModalComp;
+export default connect(null, {deleteTask: taskDeleted})(ModalComp);

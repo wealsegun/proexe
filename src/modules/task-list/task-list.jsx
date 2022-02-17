@@ -10,13 +10,13 @@ function TaskListNav({ ...props }) {
   const [show, setShow] = useState({ open: false, id: undefined });
 
   useEffect(() => {
-    props.getAllUsers()
+    props.getAllUsers();
   }, [props.getAllUsers]);
   
 
   return (
     <div className="task-list" >
-      <ModalComp show={show.open} handleShow={setShow} />
+      <ModalComp show={show.open} id={show.id} handleShow={setShow} />
       <table className="table-arrangement">
         <thead>
           <tr>
@@ -46,7 +46,7 @@ function TaskListNav({ ...props }) {
                   <button
                     className="delete-button"
                     onClick={() =>
-                      setShow({ open: true, id: i })}
+                      setShow({ open: true, id: item?.id })}
                   >Delete</button>
                 </td>
               </tr>

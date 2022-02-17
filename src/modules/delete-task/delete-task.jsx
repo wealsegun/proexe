@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { Modal, Button } from "react-bootstrap"
 const DeleteConfirmation = ({showModal, hideModal, confirmModal, id, type, message}) => {
-
+useEffect(()=>{
+    console.log('lol')
+})
 
     return (
         <Modal>
@@ -14,7 +17,7 @@ const DeleteConfirmation = ({showModal, hideModal, confirmModal, id, type, messa
                 <Button variant="default" onClick={hideModal}>
                     Cancel
                 </Button>
-                <Button variant="default" onClick={confirmModal(type,id)}>
+                <Button variant="default" onClick={() => console.log('hi')}>
                     Delete
                 </Button>
             </Modal.Footer>
