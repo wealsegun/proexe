@@ -1,7 +1,6 @@
 import TaskListNav from "../task-list/task-list";
-import { data } from '../../data';
 import DashboardContainer from "../dashboardContainer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllUsers } from '../../redux/action-creator'
 

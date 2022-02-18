@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import DashboardNav from "./modules/dashboard/dashboard";
@@ -10,9 +10,9 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/tutorials" className="navbar-brand">
+        {/* <a  className="navbar-brand"> */}
           ProExe
-        </a>
+        {/* </a> */}
         <div className="navbar-nav mr-auto"></div>
       </nav>
       <BrowserRouter>
