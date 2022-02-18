@@ -10,17 +10,15 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        {/* <a  className="navbar-brand"> */}
-          ProExe
-        {/* </a> */}
         <div className="navbar-nav mr-auto"></div>
       </nav>
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/" index
             element={<DashboardNav />}
           />
+          
           <Route path="/create-task" element={<CreateTask />} />
         </Routes>
       </BrowserRouter>
