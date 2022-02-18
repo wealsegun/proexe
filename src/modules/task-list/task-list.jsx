@@ -11,7 +11,7 @@ function TaskListNav({ ...props }) {
 
   useEffect(() => {
     props.getAllUsers();
-  }, [props.getAllUsers]);
+  });
   
 
   return (

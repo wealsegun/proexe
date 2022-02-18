@@ -1,4 +1,3 @@
-import { data } from "../../data";
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = [];

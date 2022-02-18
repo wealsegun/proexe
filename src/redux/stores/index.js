@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 // import { data } from "../../data";
-import reducer, { state } from "../reducers/task-reducer";
+// import reducer, { state } from "../reducers/task-reducer";
 
 import rootReducer from '../reducers';
 const initialState = {};
